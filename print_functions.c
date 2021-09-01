@@ -1,6 +1,6 @@
 #include "my_mastermind.h"
 
-void print_first_round(int round, struct init_options *options, int attempts)
+void print_first_round(int round, int attempts)
 {
     printf("Will you find the secret code?\n");
     printf("You have %d attempts, good luck!\n", attempts);
@@ -8,7 +8,7 @@ void print_first_round(int round, struct init_options *options, int attempts)
     printf("Round %d\n", round);
 }
 
-void print_rounds(int round, struct init_options *options)
+void print_rounds(int round)
 {
     printf("---\n");
     printf("Round %d\n", round);
