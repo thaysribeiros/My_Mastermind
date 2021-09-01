@@ -27,9 +27,9 @@ bool is_digit(char* str);
 bool is_valid_input(char* user_guess);
 bool is_digit_input(char* str);
 int number_of_attempts(struct init_options *options);
-void print_first_round(int round, struct init_options *options, int attempts);
+void print_first_round(int round, int attempts);
 int check_code(char* code, struct init_options *options);
-void print_rounds(int round, struct init_options *options);
+void print_rounds(int round);
 void print_secret_code(struct init_options *options);
 //void print_bool(bool option); //for debugging purposes
 
