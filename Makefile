@@ -8,9 +8,16 @@ OBJECTS = $(SOURCES: .c=.o)
 TARGET = my_mastermind
 
 $(TARGET) : $(OBJECTS)
-	$(CC) $(FLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
-.PHONY: clean
+.PHONY: clean fclean re
 
 clean: 
-	@rm -f $(TARGET) $(OBJECTS) core
+	@rm -f *.o 
+
+fclean: 
+	@rm $(TARGET0)
+	$(clean) 
+
+re: $(fclean) 
+	$(MAKE)
