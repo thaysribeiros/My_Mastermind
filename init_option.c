@@ -13,7 +13,7 @@ int init_option(int ac, char** av, struct init_options *options)
     {
         if (my_strcmp(av[i], "-c") != 0 && my_strcmp(av[i], "-t") != 0)
         {
-            return EXIT_FAILURE;
+            return -1;
         }
         while (i < ac)
         {
@@ -26,7 +26,7 @@ int init_option(int ac, char** av, struct init_options *options)
                 }
                 else
                 {
-                    return EXIT_FAILURE;
+                    return -1;
                 }
             }
             if (my_strcmp(av[i], "-t") == 0 && av[i+1] != NULL)
@@ -38,24 +38,24 @@ int init_option(int ac, char** av, struct init_options *options)
                 }
                 else
                 {
-                    printf("Number of attempts must be a positive number\n");
-                    return EXIT_FAILURE;
+                    printf("Number of attemps must be a positive number\n");
+                    return -1;
                 }
             }
             if ((my_strcmp(av[i], "-c") == 0 && av[i+1] == NULL) || (my_strcmp(av[i], "-t") == 0 && av[i+1] == NULL))
             {
-                return EXIT_FAILURE;
+                return -1;
             }
             i += 1;
         }
-        return EXIT_SUCCESS;
+        return 0;
     }
     else if (ac == 1)
     {
-        return EXIT_SUCCESS;
+        return 0;
     }
     else
     {
-        return EXIT_FAILURE;
+        return -1;
     }
 }
